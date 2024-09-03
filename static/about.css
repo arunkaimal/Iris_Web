@@ -1,0 +1,18 @@
+.contact-main {
+  background-color: #e49bff;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+.con-input {
+  border: none;
+}
+.about {
+  background-image: linear-gradient(to right, #c738bd, #e49bff);
+  border: none;
+  width: 50%;
+}
+.about-head {
+  color: #211951;
+  text-decoration: underline;
+  margin-bottom: 0.5em;
+}

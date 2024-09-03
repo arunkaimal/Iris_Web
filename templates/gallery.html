@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extrahead %}
+  <link rel="stylesheet" href="{% static 'gallery.css' %}" />
+{% endblock %}
+
+{% block content %}
+  <div class="container gallery alert text-center">
+    <h1 class="gallery-head mt-4">Photography Services</h1>
+    <div class="row">
+      <div class="col col-gallery">
+        <p>In the realm of photography,IRIS Media Specialize in Providing consitent and high-quality imagery essential for boosting online sales and enhancing events from product photography tailored to your brand's image requirements to lifestyle photos that captivate attention,our expert team ensures every shot is perfected to meet your needs.Our photography services cover a wide spectrum of events and occasions,including award ceremonies,corporate events,social media projects,real estate shoots,modeling sessions,weddings,birthdays and more.</p>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      {% for image in image %}
+        <div class="col-3 col-gal-img">
+          <div class="card image-card">
+            <img src="{{ image.image.url }}" class="card-img-top gallery-image" />
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

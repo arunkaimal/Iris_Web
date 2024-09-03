@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extrahead %}
+  <link rel="stylesheet" href="{% static 'index.css' %}" />
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div id="carouselExampleIndicators" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{% static 'landing-pic.jpg' %}" class="d-block w-100" />
+        </div>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-lg-12">
+        <h1><b><i>Multi-Cam</i></b> Live Video Editing <br /> And Live Streaming</h1>
+        <p>For those seeking to engage their audience in real-time IRIS Media specialize in multi-camera live video editing and live streaming services.Whether it's a corporate event, conference, gala dinner, or dance party.IRIS Media have the erpertise and technology to broadcast your event to a global audience seamlessly.IRIS Media proffesional teams are equipped with the latest tools and experince to ensure a flawless live streaming experience, helping you connect with your audience anytime,anywhere</p>
+      </div>
+      {% for multicam in multicam_image %}
+        <div class="col-12" id="multicam-image">
+          <img src="{{ multicam.multicam_image.url }} class="img-fluid">
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="container" id="logo-container">
+    <div class="row">
+      {% for client in client_logo %}
+        <div class="col-3 client-logo">
+          <img class="client-logo-img" src="{{ client.client_logo.url }}" class="img-fluid" alt="Client Logos" />
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,16 @@
+#multicam-image img {
+  width: 100%;
+  margin: 0.5em 0;
+  border-radius: 5px;
+  box-shadow: 10px -5px 3rem #211951;
+}
+
+#logo-container {
+    padding: 2em;
+    background-color: #eec4eb;
+}
+
+.client-logo-img {
+    width: 12rem;
+    object-fit: contain;
+}

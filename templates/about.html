@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extrahead %}
+  <link rel="stylesheet" href="{% static 'about.css' %}" />
+{% endblock %}
+
+{% block content %}
+  <div class="container about alert text-center">
+    <h1 class="about-head">About Us</h1>
+    <div class="row">
+      <div class="col col-about">
+        <p>IRIS Media Productions is a premier communications firm headquatered in the UAE, offering comperehnsive visual media and production solutions tailored to your specific needs.With over 15 years of industry expertise and our team's years of experience in television channels,we bring a wealth of expertise to every project.IRIS Media take pride in delivering a diverse range of high quality services all under one roof.Our commitment is to craft creative and impactful communications that align with your objectives and budget,Using state-of-the-art digital media technologies and equipment such as Jimmy jib and Gimbal.Whether you're looking to elevate,reinvent or revitalixe your brand or events,IRIS Media here to make it happen.</p>
+      </div>
+    </div>
+  </div>
+  {% if success_msg %}
+    <center>
+      <h3>Thanks!</h3>
+      <p style="color: #211951;">{{ success_msg }}</p>
+    </center>
+  {% else %}
+    <div class="container contact-main">
+      <h1 class="mb-4">Get In Touch</h1>
+      <form class="row g-3" method="post">
+        {% csrf_token %}
+        <div class="col-md-6">
+          <label for="inputName" class="form-label">Full Name</label>
+          <input type="text" class="form-control con-input" placeholder="Enter Your Full Name" name="name" id="inputName" />
+        </div>
+        <div class="col-md-6">
+          <label for="inputEmail" class="form-label">Email</label>
+          <input type="text" class="form-control con-input" placeholder="Enter Your Email" name="from_email" id="inputEmail" />
+        </div>
+        <div class="col-12">
+          <label for="inputSubject" class="form-label">Subject</label>
+          <input type="text" class="form-control con-input" placeholder="Enter Your Subject" name="subject" id="inputSubject" />
+        </div>
+        <div class="col-12">
+          <label for="inputMessage" class="form-label">Message</label>
+          <textarea class="form-control" class="con-input" id="inputMessage" placeholder="Enter Your Message" name="message" rows="6"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit" style="background-color: #211951; height: 3em;">Send Message</button>
+      </form>
+    </div>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,22 @@
+.gallery-head {
+  color: #211951;
+  padding-bottom: 0.5em;
+}
+
+.image-card {
+  margin-bottom: 0.7em;
+  border: none;
+}
+
+.gallery-image {
+  height: 30em;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.gallery-image:hover {
+  background-color: #e49bff;
+}
